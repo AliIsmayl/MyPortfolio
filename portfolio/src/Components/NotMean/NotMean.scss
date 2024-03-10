@@ -1,0 +1,12 @@
+.notMean {
+    height: 100vh;
+    width: 150px;
+    background: green;
+    // background: var(--mode-color-1);
+}
+
+@media only screen and (max-width: 958px) {
+    .notMean {
+        display: none;
+    }
+}

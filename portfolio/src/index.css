@@ -1,0 +1,31 @@
+:root{
+
+    --mode-color-1:#1E1E1F;
+    --mode-color-2:#FFFFFF;
+    --mode-color-3:#D79D4B;
+    --mode-color-4:#242526;
+    --mode-color-5:#242526;
+    --mode-color-6:#BEBEBE;
+    --mode-color-7:#D79D4B;
+    --mode-color-8:#343435;
+    --mode-color-9:#D79D4B;
+    --mode-color-10:#FFFFFF;
+    --mode-color-11:#FFFFFF;
+}
+.lightMode{
+    --mode-color-1:#F4F4F4;
+    --mode-color-2:#DBDBDB;
+    --mode-color-3:#262728;
+    --mode-color-4:#F7F5FF;
+    --mode-color-5:#3E4041;
+    --mode-color-6:#262728;
+    --mode-color-7:#F7F5FF;
+    --mode-color-8:#DBDBDB;
+    --mode-color-9:#262728;
+    --mode-color-10:#262728;
+    --mode-color-11:#3E4041;
+
+}
+:root{
+    /* background: red; */
+}

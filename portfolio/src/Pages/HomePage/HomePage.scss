@@ -1,0 +1,356 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+// @include MyFlex;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+#homePage {
+    // height: 100vh;
+    overflow: hidden;
+
+    .backPage {
+        position: absolute;
+        background: var(--mode-color-1);
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .line {
+            height: 100%;
+            background: var(--mode-color-8);
+            width: 1px;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+
+            span {
+                position: absolute;
+                height: 50px;
+                width: 100%;
+                background: var(--mode-color-9);
+            }
+
+            .span1,
+            .span3,
+            .span5 {
+                animation: line1 30s infinite;
+                top: 0;
+
+            }
+
+            .span2,
+            .span4 {
+                animation: line2 30s infinite;
+                bottom: 0;
+            }
+
+
+
+            .nextSpan1,
+            .nextSpan3,
+            .nextSpan5 {
+                animation: nextLine1 30s infinite;
+                top: -1000px;
+            }
+
+            .nextSpan2,
+            .nextSpan4 {
+                animation: nextLine2 30s infinite;
+                bottom: -1000px;
+
+            }
+
+
+            .prevSpan1,
+            .prevSpan3,
+            .prevSpan5 {
+                animation: prevLine1 30s infinite;
+                bottom: 100px;
+            }
+
+            .prevSpan2,
+            .prevSpan4 {
+                animation: prevLine2 30s infinite;
+                top: 100px;
+
+            }
+
+        }
+    }
+
+    .frontPage {
+        position: absolute;
+        width: 100%;
+        // height: 100%;
+        // height: 100vh;
+        @include MyFlex;
+        position: relative;
+        padding: 0px 20px;
+        overflow: hidden;
+
+        .leftBox {
+            padding: 10px;
+            @include MyFlex;
+            flex-direction: column;
+            align-items: start;
+            width: 500px;
+
+            p {
+                font-size: 60px;
+                font-weight: bold;
+                vertical-align: baseline;
+                text-decoration: none solid transparent;
+                color: transparent;
+                -webkit-text-stroke-width: 2px;
+                -webkit-text-stroke-color: #848484;
+                font-family: "Playfair Display SC", serif;
+
+            }
+
+            h1 {
+                font-size: 130px;
+                color: var(--mode-color-10);
+                font-family: "Playfair Display", serif;
+
+            }
+
+            span {
+                font-size: 40px;
+                font-family: "Nunito", sans-serif;
+                color: var(--mode-color-10);
+
+            }
+
+            .cvBtn {
+                margin-top: 30px;
+                height: 70px;
+                width: 250px;
+                cursor: pointer;
+                position: relative;
+
+                .frntbtn {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--mode-color-3);
+                    z-index: 2;
+                    @include MyFlex;
+                    color: var(--mode-color-1);
+                    gap: 10px;
+                    transition: 0.7s;
+
+                }
+
+                span {
+                    font-size: 16px;
+                    font-family: "Open Sans", sans-serif;
+                    color: var(--mode-color-1);
+
+                }
+
+                .arrow {
+                    font-size: 30px;
+                    @include MyFlex;
+                    transition: 0.7s;
+
+                }
+
+                .cvBtnLine {
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+                    border: 2px solid var(--mode-color-3);
+                    z-index: 0;
+                    transition: 0.4s;
+
+                }
+
+                &:hover {
+                    .frntbtn {
+                        opacity: 0.9;
+                        transition: 0.7s;
+
+                    }
+
+                    .arrow {
+                        transform: translate(10px);
+                        transition: 0.7s;
+                    }
+
+                    .cvBtnLine {
+                        transition: 0.4s;
+                        top: 0px;
+                        left: 0px;
+                    }
+                }
+
+            }
+        }
+
+        .middleBox {
+            width: 480px;
+            // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            height: 100vh;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1 / 1.5;
+                // position: absolute;
+            }
+
+            .shadowImage {
+                filter: grayscale(100%) brightness(10%) contrast(200%);
+
+            }
+
+            .realImage {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                // background: rebeccapurple;
+                z-index: 4;
+                top: 1px;
+                right: 5px;
+            }
+        }
+
+        .rightBox {
+            position: absolute;
+            right: -190px;
+            transform: rotate(90deg);
+            display: flex;
+            gap: 30px;
+
+            .link {
+                color: var(--mode-color-3);
+                font-size: 20px;
+                font-family: "Playfair Display", serif;
+
+            }
+        }
+    }
+}
+
+
+@keyframes line1 {
+    50% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes line2 {
+    50% {
+        transform: translateY(-100vh);
+    }
+
+}
+
+@keyframes nextLine1 {
+    50% {
+        transform: translateY(170vh);
+    }
+}
+
+@keyframes nextLine2 {
+    50% {
+        transform: translateY(-170vh);
+    }
+
+}
+
+@keyframes prevLine1 {
+    50% {
+        transform: translateY(200vh);
+    }
+}
+
+@keyframes prevLine2 {
+    50% {
+        transform: translateY(-200vh);
+    }
+
+}
+
+@media only screen and (max-width: 899px) {
+    #homePage {
+        .backPage {
+            height: 200vh;
+        }
+
+        .frontPage {
+            gap: 20px;
+            flex-direction: column;
+
+            .middleBox {
+                height: 130vh;
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    #homePage {
+        .backPage {
+            height: 120vh;
+        }
+
+        .frontPage {
+            .leftBox {
+                text-align: center;
+                width: 290px;
+                @include MyFlex;
+
+                p {
+                    font-size: 30px;
+                    font-weight: normal;
+
+                }
+
+                h1 {
+                    font-size: 80px;
+                }
+
+                span {
+                    font-size: 25px;
+
+                }
+
+                .cvBtn {
+                    height: 40px;
+                    width: 150px;
+
+                    span {
+                        font-size: 10px;
+                    }
+
+                    .arrow {
+                        font-size: 20px;
+
+                    }
+                }
+            }
+
+            .middleBox {
+                width: 290px;
+                height: 70vh;
+            }
+
+            .rightBox {
+                right: -220px;
+            }
+        }
+    }
+}
